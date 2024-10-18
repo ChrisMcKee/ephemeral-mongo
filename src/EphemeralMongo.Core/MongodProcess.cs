@@ -32,7 +32,7 @@ internal sealed class MongodProcess : BaseMongoProcess
 
         void OnOutputDataReceivedForConnectionReadiness(object sender, DataReceivedEventArgs args)
         {
-            var isReadyToAcceptConnections = args.Data != null && args.Data.IndexOf(ConnectionReadySentence, StringComparison.OrdinalIgnoreCase) >= 0;
+            var isReadyToAcceptConnections = args.Data != null && args.Data.Contains(ConnectionReadySentence);
             if (isReadyToAcceptConnections && !isReadyToAcceptConnectionsMre.IsSet)
             {
                 isReadyToAcceptConnectionsMre.Set();
@@ -72,7 +72,7 @@ internal sealed class MongodProcess : BaseMongoProcess
 
         void OnOutputDataReceivedForReplicaSetReadiness(object sender, DataReceivedEventArgs args)
         {
-            var isReplicaSetReady = args.Data != null && args.Data.IndexOf(ReplicaSetReadySentence, StringComparison.OrdinalIgnoreCase) >= 0;
+            var isReplicaSetReady = args.Data != null && args.Data.Contains(ReplicaSetReadySentence);
             if (isReplicaSetReady && !isReplicaSetReadyMre.IsSet)
             {
                 isReplicaSetReadyMre.Set();

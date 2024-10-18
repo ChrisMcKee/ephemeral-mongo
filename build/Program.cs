@@ -137,11 +137,6 @@ public sealed class DownloadMongoTask : AsyncFrostingTask<BuildContext>
         new ProjectInfo("EphemeralMongo5.runtime.win-x64", "windows", "x86_64", "base", 5, "win-x64"),
         new ProjectInfo("EphemeralMongo5.runtime.osx-x64", "macos", "x86_64", "base", 5, "osx-x64"),
         new ProjectInfo("EphemeralMongo5.runtime.linux-x64", "ubuntu1804", "x86_64", "targeted", 5, "linux-x64"),
-
-        // MongoDB 4.x
-        new ProjectInfo("EphemeralMongo4.runtime.win-x64", "windows", "x86_64", "base", 4, "win-x64"),
-        new ProjectInfo("EphemeralMongo4.runtime.osx-x64", "macos", "x86_64", "base", 4, "osx-x64"),
-        new ProjectInfo("EphemeralMongo4.runtime.linux-x64", "ubuntu1804", "x86_64", "targeted", 4, "linux-x64"),
     };
 
     public override async Task RunAsync(BuildContext context)
@@ -402,7 +397,6 @@ public sealed class TestTask : FrostingTask<BuildContext>
 
             var packageNames = new[]
             {
-                "EphemeralMongo4",
                 "EphemeralMongo5",
                 "EphemeralMongo6",
                 "EphemeralMongo7",

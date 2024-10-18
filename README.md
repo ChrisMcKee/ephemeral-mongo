@@ -25,7 +25,6 @@ This project is very much inspired from [Mongo2Go](https://github.com/Mongo2Go/M
 
 | Package             | Description                                                           | Link                                                                                                                       |
 |---------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **EphemeralMongo4** | All-in-one package for **MongoDB 4.4.24** on Linux, macOS and Windows | [![nuget](https://img.shields.io/nuget/v/EphemeralMongo4.svg?logo=nuget)](https://www.nuget.org/packages/EphemeralMongo4/) |
 | **EphemeralMongo5** | All-in-one package for **MongoDB 5.0.20** on Linux, macOS and Windows | [![nuget](https://img.shields.io/nuget/v/EphemeralMongo5.svg?logo=nuget)](https://www.nuget.org/packages/EphemeralMongo5/) |
 | **EphemeralMongo6** | All-in-one package for **MongoDB 6.0.9** on Linux, macOS and Windows  | [![nuget](https://img.shields.io/nuget/v/EphemeralMongo6.svg?logo=nuget)](https://www.nuget.org/packages/EphemeralMongo6/) |
 | **EphemeralMongo7** | All-in-one package for **MongoDB 7.0.0** on Linux, macOS and Windows  | [![nuget](https://img.shields.io/nuget/v/EphemeralMongo7.svg?logo=nuget)](https://www.nuget.org/packages/EphemeralMongo7/) |
@@ -93,15 +92,15 @@ However, one can still avoid referencing the metapackage and directly reference 
 Instead of doing this:
 
 ```xml
-<PackageReference Include="EphemeralMongo6" Version="1.0.0" />
+<PackageReference Include="EphemeralMongo7" Version="1.0.0" />
 ```
 
 Do this:
 ```xml
 <PackageReference Include="EphemeralMongo.Core" Version="1.0.0" />
-<PackageReference Include="EphemeralMongo6.runtime.linux-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('Linux'))" />
-<PackageReference Include="EphemeralMongo6.runtime.osx-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('OSX'))" />
-<PackageReference Include="EphemeralMongo6.runtime.win-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
+<PackageReference Include="EphemeralMongo7.runtime.linux-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('Linux'))" />
+<PackageReference Include="EphemeralMongo7.runtime.osx-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('OSX'))" />
+<PackageReference Include="EphemeralMongo7.runtime.win-x64" Version="1.0.0" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
 ```
 
 

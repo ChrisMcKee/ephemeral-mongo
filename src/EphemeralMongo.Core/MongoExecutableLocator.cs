@@ -101,7 +101,7 @@ internal sealed class MongoExecutableLocator : IMongoExecutableLocator
 
         yield return new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativeExecutablePath));
 
-        var uri = new UriBuilder(typeof(MongoExecutableLocator).Assembly.CodeBase);
+        var uri = new UriBuilder(typeof(MongoExecutableLocator).Assembly.Location);
         if (Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path)) is { } path)
         {
             yield return new FileInfo(Path.Combine(path, relativeExecutablePath));
